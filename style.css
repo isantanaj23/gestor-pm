@@ -1,0 +1,2634 @@
+/*
+ * Hoja de Estilos Personalizada para Planifica+
+ * Autor: Tu Nombre/Equipo
+ * Versión: 1.0
+ */
+
+/* =================================================================
+   1. Importación de Google Fonts
+   ================================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@400;500;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap");
+
+/* =================================================================
+   2. Variables de Color y Tipografía (Raíz)
+   ================================================================= */
+:root {
+  /* Paleta de Colores */
+  --color-primary: #3001ff; /* Morado/Azul principal para marca */
+  --color-accent: #964ef9; /* Violeta para acciones de creación */
+  --color-success: #28a745; /* Verde para éxito */
+  --color-error: #dc3545; /* Rojo para errores */
+  --color-warning: #ffc107; /* Amarillo para advertencias */
+  --color-neutral: #dadada; /* Gris para bordes y fondos sutiles */
+  --color-light-bg: #f8f9fa; /* Fondo general de la app */
+  --color-white: #ffffff;
+  --color-text: #343a40; /* Color de texto principal */
+  --color-text-muted: #6c757d; /* Color para texto secundario */
+
+  /* Variables de Diseño */
+  --sidebar-width: 260px;
+  --navbar-height: 70px;
+  --border-radius: 0.5rem;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =================================================================
+   3. Estilos Globales y de Base
+   ================================================================= */
+body {
+  font-family: "Anek Gurmukhi", sans-serif;
+  background-color: var(--color-light-bg);
+  color: var(--color-text);
+  padding-top: var(--navbar-height); /* Espacio para la navbar fija */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+}
+
+/* =================================================================
+   4. Estilos de Componentes Específicos
+   ================================================================= */
+
+/* --- Barra de Navegación Superior --- */
+.navbar.fixed-top {
+  height: var(--navbar-height);
+  background-color: var(--color-white) !important;
+  border-color: var(--color-neutral) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+  font-weight: 800; /* ExtraBold */
+  color: var(--color-primary) !important;
+}
+
+.user-avatar {
+  border: 2px solid var(--color-primary);
+}
+
+/* --- Barra Lateral --- */
+.sidebar {
+  width: var(--sidebar-width);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: var(--navbar-height);
+  background-color: var(--color-white);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar .nav-link {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  padding: 0.9rem 1.5rem;
+  border-right: 3px solid transparent; /* Borde para el estado activo */
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar .nav-link:hover {
+  color: var(--color-primary);
+  background-color: #f0f0ff;
+}
+
+.sidebar .nav-link.active {
+  color: var(--color-primary);
+  background-color: #e9e7ff; /* Un tono muy claro del primario */
+  border-right-color: var(--color-primary);
+}
+
+.sidebar .nav-link .bi {
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  vertical-align: text-bottom;
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+  padding-left: var(--sidebar-width);
+}
+
+/* Agrega estos estilos a tu archivo style.css */
+
+/* ===== DASHBOARD ENHANCED STYLES ===== */
+
+/* KPI Cards Mejoradas */
+.kpi-card-enhanced {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.kpi-card-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.kpi-value-large {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1;
+}
+
+.kpi-label-small {
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.kpi-icon {
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+
+.kpi-card-enhanced:hover .kpi-icon {
+  opacity: 0.2;
+}
+
+.kpi-trend {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.kpi-trend.trend-up {
+  color: #28a745;
+}
+
+.kpi-trend.trend-down {
+  color: #6c757d;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-card .card-header {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  font-weight: 600;
+}
+
+/* Task Items */
+.task-item {
+  transition: all 0.2s ease;
+  border-left-width: 4px !important;
+}
+
+.task-item:hover {
+  background-color: #f8f9fa;
+  padding-left: 1.25rem !important;
+}
+
+.task-title {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.task-tags .badge {
+  background-color: #f8f9fa !important;
+  color: #6c757d !important;
+  border: 1px solid #dee2e6 !important;
+  font-weight: 500;
+}
+
+/* Checkboxes Mejorados */
+.form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0;
+  border-width: 2px;
+  border-color: #dee2e6;
+}
+
+.form-check-input:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.form-check-input:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Activity Items */
+.activity-item {
+  transition: all 0.2s ease;
+}
+
+.activity-item:hover {
+  background-color: #f8f9fa;
+}
+
+.activity-preview {
+  border: 1px solid #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.activity-item:hover .activity-preview {
+  border-color: #c6c8ca;
+  background-color: white !important;
+}
+
+/* Avatares Mejorados */
+.rounded-circle {
+  border: 2px solid white !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* User Avatar Header */
+#dashboard-view .rounded-circle {
+  width: 64px;
+  height: 64px;
+  border: 3px solid #e9ecef !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bars Mejoradas */
+.progress {
+  background-color: #f1f3f4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Badges Mejorados */
+.badge {
+  font-weight: 500;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+}
+
+.badge.bg-light {
+  background-color: #f8f9fa !important;
+  color: #495057 !important;
+  border: 1px solid #dee2e6;
+}
+
+/* Background Colors */
+.bg-primary-subtle {
+  background-color: rgba(48, 1, 255, 0.05) !important;
+  border-top: 1px solid rgba(48, 1, 255, 0.1);
+}
+
+.bg-success-subtle {
+  background-color: rgba(40, 167, 69, 0.05) !important;
+  border: 1px solid rgba(40, 167, 69, 0.1);
+}
+
+.bg-light-subtle {
+  background-color: #f8f9fa !important;
+  border-color: #e9ecef !important;
+}
+
+/* Button Groups */
+.btn-group .btn {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+}
+
+.btn-outline-primary:hover {
+  background-color: rgba(48, 1, 255, 0.1);
+  border-color: #3001ff;
+  color: #3001ff;
+}
+
+/* Icons */
+.bi {
+  vertical-align: -0.125em;
+}
+
+/* Gradients */
+.bg-gradient {
+  background: linear-gradient(90deg, #28a745, #20c997) !important;
+}
+
+/* Hover Effects for Interactive Elements */
+.task-item .form-check-input,
+.activity-item,
+.kpi-card-enhanced {
+  cursor: pointer;
+}
+
+/* File Preview Styling */
+.activity-preview .bi-file-earmark-pdf {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .kpi-value-large {
+    font-size: 2rem;
+  }
+  
+  .task-item,
+  .activity-item {
+    padding: 0.75rem !important;
+  }
+  
+  .task-item:hover {
+    padding-left: 1rem !important;
+  }
+  
+  .dashboard-card .card-body {
+    padding: 0.75rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-group .btn {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-card,
+.kpi-card-enhanced {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* Focus States */
+.task-item:focus-within {
+  background-color: #f8f9fa;
+  outline: 2px solid rgba(48, 1, 255, 0.2);
+  outline-offset: -2px;
+}
+
+/* Badge Variations */
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+}
+
+.badge.bg-info {
+  background-color: #17a2b8 !important;
+}
+
+.badge.bg-primary {
+  background-color: #3001ff !important;
+}
+
+/* Text Colors */
+.text-primary {
+  color: #3001ff !important;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-info {
+  color: #17a2b8 !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+/* --- Tarjetas (Cards) --- */
+.card {
+  border: 1px solid var(--color-neutral);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-neutral);
+  font-weight: bold;
+}
+
+/* --- Botones --- */
+.btn-primary {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/*=================================================================
+  Fragmento de Vista de Comunicación (Chat)
+  Puedes añadir estos estilos a tu style.css para un mejor resultado.
+  =================================================================*/
+.chat-container-enhanced {
+  border-radius: 12px;
+  background: white;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  min-height: 600px;
+  max-height: 80vh;
+}
+
+/* Conversation Sidebar */
+.conversation-sidebar {
+  background: #f8f9fa;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversation-header {
+  background: white;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.conversation-header h6 {
+  color: #3001ff;
+  font-size: 1rem;
+}
+
+/* Search Box */
+.search-box input {
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.search-box input:focus {
+  box-shadow: 0 0 0 3px rgba(48, 1, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Conversation Filters */
+.conversation-filters .btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.conversation-filters .btn-primary {
+  background-color: #3001ff;
+  border-color: #3001ff;
+}
+
+/* Conversation List */
+.conversation-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+}
+
+.conversation-item {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+  margin: 0.25rem 0;
+}
+
+.conversation-item:hover {
+  background-color: white;
+  border-left-color: #e9ecef;
+}
+
+.conversation-item.active {
+  background-color: white;
+  border-left-color: #3001ff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Conversation Avatar */
+.conversation-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-group {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e9ecef;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Status Badges */
+.status-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.status-active {
+  background-color: #28a745;
+}
+
+.status-away {
+  background-color: #ffc107;
+}
+
+.status-offline {
+  background-color: #6c757d;
+}
+
+/* Conversation Info */
+.conversation-name {
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.conversation-preview {
+  color: #6c757d;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.conversation-time {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Chat Window */
+.chat-window-enhanced {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+/* Chat Header */
+.chat-header-enhanced {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  flex-shrink: 0;
+}
+
+.chat-avatar {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 50%;
+  border: 2px solid #e9ecef;
+}
+
+/* Active Members */
+.active-members {
+  flex-shrink: 0;
+}
+
+.active-members img {
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Messages */
+.chat-messages-enhanced {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #fafbfc;
+}
+
+/* Message Groups */
+.message-group {
+  max-width: 100%;
+}
+
+.message-avatar {
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.message-content {
+  max-width: 70%;
+}
+
+.own-message .message-content {
+  max-width: 70%;
+  margin-left: auto;
+}
+
+/* Message Header */
+.message-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.message-sender {
+  color: #2c3e50;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.message-time {
+  font-size: 0.75rem;
+}
+
+/* Message Bubbles */
+.message-bubble {
+  padding: 0.75rem 1rem;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+}
+
+.message-bubble.received {
+  background: white;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.message-bubble.sent {
+  background: #3001ff;
+  color: white;
+  margin-left: auto;
+}
+
+/* Mentions */
+.mention {
+  background: rgba(48, 1, 255, 0.1);
+  color: #3001ff;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Message Reactions */
+.message-reactions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.message-reactions .btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #e9ecef;
+}
+
+.message-reactions .btn:hover {
+  background-color: #f8f9fa;
+}
+
+/* File Attachments */
+.file-attachment {
+  max-width: 300px;
+}
+
+.attachment-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  gap: 0.75rem;
+}
+
+.attachment-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #2c3e50;
+}
+
+/* Message Status */
+.message-status {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+}
+
+/* System Messages */
+.system-message {
+  margin: 1rem 0;
+}
+
+.system-message small {
+  background: #e9ecef;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.typing-indicator .bi-three-dots::before {
+  animation: typing-dots 1.5s infinite;
+}
+
+@keyframes typing-dots {
+  0%, 60%, 100% { opacity: 0.3; }
+  30% { opacity: 1; }
+}
+
+/* Chat Input */
+.chat-input-enhanced {
+  flex-shrink: 0;
+  background: white;
+  border-top: 2px solid #f8f9fa;
+}
+
+.input-group-enhanced {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.chat-textarea {
+  border: 2px solid #e9ecef;
+  border-radius: 20px;
+  padding: 0.75rem 4rem 0.75rem 1rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  line-height: 1.4;
+}
+
+.chat-textarea:focus {
+  border-color: #3001ff;
+  box-shadow: 0 0 0 3px rgba(48, 1, 255, 0.1);
+}
+
+.input-actions {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0.25rem;
+}
+
+.input-actions .btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.input-actions .btn:hover {
+  background: #f8f9fa;
+}
+
+/* Badges */
+.badge-sm {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.4rem;
+}
+
+/* Scrollbar Styling */
+.conversation-list::-webkit-scrollbar,
+.chat-messages-enhanced::-webkit-scrollbar {
+  width: 6px;
+}
+
+.conversation-list::-webkit-scrollbar-track,
+.chat-messages-enhanced::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.conversation-list::-webkit-scrollbar-thumb,
+.chat-messages-enhanced::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.conversation-list::-webkit-scrollbar-thumb:hover,
+.chat-messages-enhanced::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chat-container-enhanced {
+    border-radius: 0;
+    height: 100vh;
+  }
+  
+  .conversation-sidebar {
+    display: none;
+  }
+  
+  .message-content {
+    max-width: 85%;
+  }
+  
+  .own-message .message-content {
+    max-width: 85%;
+  }
+  
+  .message-bubble {
+    padding: 0.5rem 0.75rem;
+    border-radius: 16px;
+  }
+  
+  .chat-input-enhanced {
+    padding: 1rem;
+  }
+  
+  .input-actions {
+    right: 0.75rem;
+  }
+}
+
+/* Animations */
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-group {
+  animation: slideInMessage 0.3s ease-out;
+}
+
+/* Hover Effects */
+.conversation-item:hover .conversation-name {
+  color: #3001ff;
+}
+
+.message-bubble.received:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Focus States */
+.conversation-item:focus-within {
+  outline: 2px solid rgba(48, 1, 255, 0.2);
+  outline-offset: -2px;
+}
+
+/* Badge Colors */
+.badge.bg-light {
+  background-color: #f8f9fa !important;
+  color: #495057 !important;
+  border: 1px solid #dee2e6;
+}
+
+.badge.bg-primary {
+  background-color: #3001ff !important;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.badge.bg-info {
+  background-color: #17a2b8 !important;
+}
+
+/* Keyboard Shortcut Styling */
+kbd {
+  background-color: #f8f9fa;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  color: #333;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+/*=================================================================
+  Fragmento de Vista de Redes Sociales (Calendario)
+  Puedes añadir estos estilos a tu style.css para un mejor resultado.
+  =================================================================*/
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+.calendar-day-header {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+  color: var(--color-text-muted);
+}
+.calendar-day {
+  border: 1px solid var(--color-neutral);
+  min-height: 150px;
+  padding: 0.5rem;
+  position: relative;
+  transition: background-color 0.2s;
+}
+.calendar-day:not(.disabled):hover {
+  background-color: #f8f9fa;
+}
+.calendar-day.disabled {
+  background-color: #f1f3f5;
+  color: var(--color-text-muted);
+}
+.day-number {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.post-preview {
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.post-preview img {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+}
+.post-preview .social-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+.bi-instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  color: white;
+}
+.bi-facebook {
+  background-color: #1877f2;
+  color: white;
+}
+
+/* =================================================================
+  Fragmento de Vista de Portal de Cliente
+  Puedes añadir estos estilos a tu style.css para un mejor resultado.
+  =================================================================*/
+.status-badge {
+  font-size: 0.9em;
+  padding: 0.5em 0.75em;
+}
+
+/* =================================================================
+   5. Responsividad
+   ================================================================= */
+@media (max-width: 991.98px) {
+  .main-content {
+    padding-left: 0;
+  }
+
+  .sidebar {
+    /* Bootstrap se encarga de mostrar/ocultar con la clase .collapse */
+    z-index: 1040; /* Por encima de la navbar cuando se abre */
+  }
+}
+
+/* =================================================================
+   4. Vista de Resumen de Proyectos
+   ================================================================= */
+.project-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  border: 1px solid var(--color-neutral);
+  box-shadow: var(--card-shadow);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.project-description {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.project-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+.status-active {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+.status-paused {
+  background-color: #fef9c3;
+  color: #ca8a04;
+}
+.status-completed {
+  background-color: #e0e7ff;
+  color: var(--color-primary);
+}
+.project-metrics {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.metric-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.metric-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+.project-team {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.team-avatars {
+  display: flex;
+}
+.team-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -12px;
+}
+.team-avatar:first-child {
+  margin-left: 0;
+}
+.team-more-text {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-left: 0.75rem;
+}
+.project-progress-bar {
+  height: 8px;
+  margin-top: auto;
+  border-radius: 50rem;
+}
+
+/* =================================================================
+   5. Tablero Kanban
+   ================================================================= */
+/* ===== KANBAN BOARD ENHANCED STYLES ===== */
+
+.kanban-board {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  min-height: 600px;
+}
+
+.kanban-column {
+  min-width: 320px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.kanban-column .card {
+  height: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.kanban-column .card-header {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Task Cards Enhanced */
+.task-card {
+  cursor: grab;
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task-card:active {
+  cursor: grabbing;
+}
+
+.task-card .card-title {
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.3;
+}
+
+.task-card .card-text {
+  line-height: 1.4;
+  font-size: 0.85rem;
+}
+
+/* Priority Badges */
+.badge-sm {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+}
+
+/* Avatar Improvements */
+.task-card img.rounded-circle {
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-left: -4px;
+}
+
+.task-card img.rounded-circle:first-child {
+  margin-left: 0;
+}
+
+/* Progress Bars */
+.task-card .progress {
+  background-color: #f1f3f4;
+  border-radius: 4px;
+}
+
+.task-card .progress-bar {
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Icon Styling */
+.task-card .bi {
+  opacity: 0.7;
+}
+
+/* Tags/Labels */
+.task-card .badge.border {
+  background-color: #f8f9fa !important;
+  color: #6c757d !important;
+  border-color: #dee2e6 !important;
+  font-weight: 500;
+}
+
+/* Due Date Colors */
+.text-danger {
+  font-weight: 500;
+}
+
+.text-warning {
+  font-weight: 500;
+}
+
+.text-info {
+  font-weight: 500;
+}
+
+/* Add Task Buttons */
+.kanban-column .btn-outline-secondary,
+.kanban-column .btn-outline-primary,
+.kanban-column .btn-outline-warning {
+  border-style: dashed;
+  border-width: 2px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.kanban-column .btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  border-style: solid;
+}
+
+.kanban-column .btn-outline-primary:hover {
+  background-color: rgba(48, 1, 255, 0.1);
+  border-style: solid;
+}
+
+.kanban-column .btn-outline-warning:hover {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-style: solid;
+}
+
+/* Column Headers with Icons */
+.kanban-column .card-header .bi {
+  font-size: 1rem;
+}
+
+.kanban-column .badge {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* Completed Tasks Styling */
+.kanban-column .opacity-75 {
+  background-color: #f8f9fa;
+}
+
+.kanban-column .opacity-75 .card-title,
+.kanban-column .opacity-75 .card-text {
+  color: #6c757d !important;
+}
+
+/* Success highlight for completed column */
+.bg-success-subtle {
+  background-color: rgba(40, 167, 69, 0.1) !important;
+  border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+/* Drag and Drop Visual Feedback */
+.kanban-column .card-body.drag-over {
+  background-color: rgba(48, 1, 255, 0.05);
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .kanban-board {
+    gap: 1rem;
+  }
+  
+  .kanban-column {
+    min-width: 280px;
+  }
+  
+  .task-card .card-body {
+    padding: 0.75rem !important;
+  }
+  
+  .task-card .card-title {
+    font-size: 0.9rem;
+  }
+  
+  .task-card .card-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* Scrollbar Styling for Kanban Board */
+.kanban-board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.kanban-board::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation for new tasks */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-card.new-task {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* =================================================================
+   6. Responsividad
+   ================================================================= */
+@media (max-width: 991.98px) {
+  .main-content {
+    padding-left: 0;
+  }
+  .sidebar {
+    z-index: 1040;
+    left: calc(-1 * var(--sidebar-width));
+    transition: left 0.3s ease-in-out;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+}
+
+/* =================================================================
+   Estilos para la Vista de Reportes y Analíticas
+   ================================================================= */
+.kpi-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--color-neutral);
+  box-shadow: var(--card-shadow);
+}
+.kpi-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.kpi-label {
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+.kpi-trend {
+  font-weight: 500;
+}
+.kpi-trend.trend-up {
+  color: var(--color-success);
+}
+.kpi-trend.trend-down {
+  color: var(--color-error);
+}
+
+/* =================================================================
+   7. TABLA DE RESUMEN DE PROYECTOS
+   ================================================================= */
+
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.team-avatars-small {
+  display: flex;
+  align-items: center;
+}
+
+.team-avatar-small {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -10px;
+  object-fit: cover;
+}
+
+.team-avatar-small:first-child {
+  margin-left: 0;
+}
+
+.team-avatar-small-more {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border: 2px solid white;
+  margin-left: -10px;
+}
+
+/* =================================================================
+   Responsividad
+   ================================================================= */
+@media (max-width: 991.98px) {
+  .main-content {
+    padding-left: 0;
+  }
+  .sidebar {
+    z-index: 1040;
+    left: calc(-1 * var(--sidebar-width));
+    transition: left 0.3s ease-in-out;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+}
+
+/* =================================================================
+   AÑADIDO: Estilos para la Vista de Reportes Semanales
+   ================================================================= */
+.weekly-report-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--color-neutral);
+  box-shadow: var(--card-shadow);
+  height: 100%;
+}
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-neutral);
+}
+.report-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.report-project-tag {
+  background-color: var(--color-light-bg);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50rem;
+}
+.report-section {
+  margin-bottom: 1.5rem;
+}
+.report-section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+.report-section-title .bi {
+  margin-right: 0.5rem;
+}
+.report-content {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  background-color: var(--color-light-bg);
+  border-left: 3px solid var(--color-neutral);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+.report-content ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
+.pending-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pending-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #fff8f8;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border-left: 3px solid var(--color-error);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+.pending-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ced4da;
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* =================================================================
+   Responsividad
+   ================================================================= */
+@media (max-width: 991.98px) {
+  .main-content {
+    padding-left: 0;
+  }
+  .sidebar {
+    z-index: 1040;
+    left: calc(-1 * var(--sidebar-width));
+    transition: left 0.3s ease-in-out;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+}
+
+/* =================================================================
+   6. CALENDARIO SOCIAL MEJORADO
+   ================================================================= */
+
+/* Estilos para las celdas de los días */
+.calendar-day {
+  position: relative; /* Necesario para posicionar el botón de añadir */
+  transition: background-color 0.3s ease;
+  padding-top: 30px; /* Espacio para el número y el botón */
+}
+
+.calendar-day:not(.disabled):hover {
+  background-color: #f8f9fa;
+}
+
+/* Botón para añadir nueva publicación (+) */
+.add-post-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: var(--color-accent);
+  color: white;
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Oculto por defecto */
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.calendar-day:hover .add-post-btn {
+  opacity: 1; /* Visible al pasar el ratón por encima del día */
+  transform: scale(1);
+}
+
+.add-post-btn:hover {
+  transform: scale(1.1);
+}
+
+.day-number {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+}
+
+/* Lista de tarjetas de previsualización */
+.post-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+/* Tarjeta individual de previsualización */
+.post-preview-item {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 0.25rem; /* Menos redondeado que --border-radius */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #fff;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-neutral);
+  border-left-width: 4px; /* Borde izquierdo más grueso */
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.post-preview-item:hover {
+  background-color: var(--color-light-bg);
+  border-color: var(--color-accent);
+}
+
+.post-preview-text {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+/* Colores para el borde izquierdo según la red social */
+.post-preview-item.instagram {
+  border-left-color: #d6249f;
+}
+.post-preview-item.facebook {
+  border-left-color: #1877f2;
+}
+.post-preview-item.linkedin {
+  border-left-color: #0a66c2;
+}
+.post-preview-item.twitter {
+  border-left-color: #1da1f2;
+}
+
+.post-preview-item .bi {
+  font-size: 0.9rem;
+}
+
+
+/* ===== CRM STYLES ===== */
+
+/* CRM KPI Cards */
+.crm-kpi-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border-left-width: 4px !important;
+}
+
+.crm-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.crm-kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.crm-kpi-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.crm-kpi-trend {
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+/* Pipeline Board */
+.pipeline-board {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  min-height: 600px;
+}
+
+.pipeline-column {
+  min-width: 300px;
+  flex: 1;
+  max-width: 350px;
+}
+
+.pipeline-column .card {
+  height: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 12px;
+}
+
+.pipeline-column .card-header {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Prospect Cards */
+.prospect-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.prospect-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #3001ff;
+}
+
+.prospect-card.border-success {
+  border-color: #28a745 !important;
+  background: rgba(40, 167, 69, 0.02);
+}
+
+.prospect-name {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.prospect-contact {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.prospect-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #28a745;
+}
+
+.prospect-source {
+  background: #f8f9fa;
+  color: #495057;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #dee2e6;
+}
+
+.prospect-priority {
+  padding: 0.2rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prospect-priority.high {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.prospect-priority.medium {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.prospect-priority.low {
+  background: rgba(23, 162, 184, 0.1);
+  color: #17a2b8;
+  border: 1px solid rgba(23, 162, 184, 0.3);
+}
+
+.prospect-priority.completed {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.prospect-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.prospect-actions .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-width: 1px;
+}
+
+.prospect-progress {
+  margin-top: 0.5rem;
+}
+
+.prospect-progress .progress {
+  height: 4px;
+  margin-bottom: 0.25rem;
+}
+
+/* Pipeline Status Badges */
+.pipeline-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pipeline-status.lead {
+  background: rgba(108, 117, 125, 0.1);
+  color: #6c757d;
+  border: 1px solid rgba(108, 117, 125, 0.3);
+}
+
+.pipeline-status.contacted {
+  background: rgba(23, 162, 184, 0.1);
+  color: #17a2b8;
+  border: 1px solid rgba(23, 162, 184, 0.3);
+}
+
+.pipeline-status.proposal {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.pipeline-status.client {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+/* Contacts Table */
+.contacts-table-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.contacts-table-card .card-header {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  padding: 1.25rem 1.5rem;
+}
+
+.contacts-table-card .table tr {
+  transition: all 0.2s ease;
+}
+
+.contacts-table-card .table tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Activity Timeline */
+.activity-timeline-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.activity-timeline-card .card-header {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  padding: 1.25rem 1.5rem;
+}
+
+.activity-timeline {
+  position: relative;
+}
+
+.activity-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e9ecef;
+}
+
+.activity-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.activity-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.activity-header {
+  margin-bottom: 0.5rem;
+}
+
+.activity-header strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.activity-description {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.activity-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Activity Stats */
+.activity-stats-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.activity-stats-card .card-header {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  padding: 1.25rem 1.5rem;
+}
+
+.activity-stat-item {
+  margin-bottom: 1rem;
+}
+
+.upcoming-activities-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.upcoming-activities-card .card-header {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  padding: 1.25rem 1.5rem;
+}
+
+.upcoming-activity {
+  padding: 0.75rem 0;
+}
+
+.next-activity-item {
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+/* Report Metrics */
+.report-metric-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.report-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.metric-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-content {
+  flex: 1;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.metric-change {
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.metric-change.positive {
+  color: #28a745;
+}
+
+.metric-change.negative {
+  color: #dc3545;
+}
+
+.metric-change.neutral {
+  color: #6c757d;
+}
+
+/* Report Charts */
+.report-chart-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.report-chart-card .card-header {
+  background: white;
+  border-bottom: 2px solid #f8f9fa;
+  padding: 1.25rem 1.5rem;
+}
+
+/* Stage Badges */
+.stage-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.stage-badge.lead {
+  background: rgba(108, 117, 125, 0.1);
+  color: #6c757d;
+  border: 1px solid rgba(108, 117, 125, 0.3);
+}
+
+.stage-badge.contacted {
+  background: rgba(23, 162, 184, 0.1);
+  color: #17a2b8;
+  border: 1px solid rgba(23, 162, 184, 0.3);
+}
+
+.stage-badge.proposal {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.stage-badge.client {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+/* Conversion Stats */
+.conversion-stats {
+  background: rgba(40, 167, 69, 0.05) !important;
+  border: 1px solid rgba(40, 167, 69, 0.1);
+}
+
+/* Modal Enhancements */
+.prospect-info-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+}
+
+.prospect-modal-name {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.prospect-modal-title {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.prospect-modal-status {
+  margin-bottom: 1rem;
+}
+
+.prospect-modal-value {
+  margin-bottom: 1.5rem;
+}
+
+.contact-methods {
+  margin-bottom: 1.5rem;
+}
+
+.contact-details {
+  font-size: 0.9rem;
+}
+
+.contact-details .bi {
+  width: 16px;
+}
+
+/* Timeline for Prospect Detail */
+.prospect-activity-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.prospect-activity-timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e9ecef;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content {
+  margin-left: 0.5rem;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-header strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.timeline-description {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pipeline-board {
+    gap: 1rem;
+  }
+  
+  .pipeline-column {
+    min-width: 280px;
+  }
+  
+  .prospect-card {
+    padding: 0.75rem;
+  }
+  
+  .prospect-actions {
+    justify-content: center;
+  }
+  
+  .activity-item {
+    padding-left: 50px;
+  }
+  
+  .activity-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .timeline-item {
+    padding-left: 0;
+  }
+  
+  .timeline-marker {
+    left: -1.5rem;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .report-metric-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .metric-icon {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Scrollbar for Pipeline */
+.pipeline-board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.pipeline-board::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.pipeline-board::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.pipeline-board::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Form Controls in Modals */
+#contactModal .form-control,
+#contactModal .form-select,
+#activityModal .form-control,
+#activityModal .form-select {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+#contactModal .form-control:focus,
+#contactModal .form-select:focus,
+#activityModal .form-control:focus,
+#activityModal .form-select:focus {
+  border-color: #3001ff;
+  box-shadow: 0 0 0 3px rgba(48, 1, 255, 0.1);
+}
+
+/* Priority Radio Buttons */
+.btn-group .btn-check:checked + .btn-outline-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.btn-group .btn-check:checked + .btn-outline-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+.btn-group .btn-check:checked + .btn-outline-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  color: white;
+}
+
+
+
+.team-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px 12px 0 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.team-header {
+  position: relative;
+}
+
+.team-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: #6c757d !important;
+}
+
+.team-status-indicator .badge {
+  font-size: 0.65rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+}
+
+.team-list {
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.team-member-item {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.team-member-card {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.team-member-card:hover {
+  background-color: rgba(48, 1, 255, 0.05);
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-avatar {
+  position: relative;
+  margin-right: 0.75rem;
+}
+
+.avatar-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.status-online {
+  background-color: #28a745;
+}
+
+.status-busy {
+  background-color: #ffc107;
+}
+
+.status-away {
+  background-color: #6c757d;
+}
+
+.team-member-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.member-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #2c3e50;
+  margin-bottom: 0.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-role {
+  font-size: 0.75rem;
+  color: #6c757d;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-status {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.status-text {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.team-member-actions {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-member-card:hover .team-member-actions {
+  opacity: 1;
+}
+
+.btn-action {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-action i {
+  font-size: 0.8rem;
+}
+
+.team-footer {
+  background: rgba(248, 249, 250, 0.5);
+  border-radius: 0 0 12px 12px;
+}
+
+.team-footer .btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Scrollbar personalizado */
+.team-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.team-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.team-list::-webkit-scrollbar-thumb {
+  background: #dee2e6;
+  border-radius: 2px;
+}
+
+.team-list::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.status-online {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-member-actions {
+    opacity: 1;
+  }
+  
+  .member-name,
+  .member-role {
+    font-size: 0.8rem;
+  }
+  
+  .team-member-card {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Estados adicionales */
+.team-member-card[data-status="offline"] {
+  opacity: 0.6;
+}
+
+.team-member-card[data-status="busy"] .member-name {
+  color: #856404;
+}
+
+/* Tooltip personalizado */
+.tooltip-inner {
+  background-color: #2c3e50;
+  font-size: 0.75rem;
+}
+
+.tooltip.bs-tooltip-right .tooltip-arrow::before {
+  border-right-color: #2c3e50;
+}
